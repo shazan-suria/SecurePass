@@ -25,7 +25,7 @@ const ResetPassword = () => {
       if (newPassword.password !== newPassword.confirmPassword) {
         window.alert('Passwords do not match');
       } else {  
-        await axios.post(`http://localhost:3000/reset-password/${token}`, { newPassword });
+        await axios.post(`https://securepass-api-b6ig.onrender.com/reset-password/${token}`, { newPassword });
         window.alert("Password has been reset successfully");
         window.location.href = "http://localhost:5173/SignInSignUp";
       }

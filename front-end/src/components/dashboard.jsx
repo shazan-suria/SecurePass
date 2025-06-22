@@ -6,7 +6,7 @@ const Dashboard = () => {
 
     const getUsers = async () => {
         try {
-            let req = await fetch("http://localhost:3000/dashboard");
+            let req = await fetch("https://securepass-api-b6ig.onrender.com/dashboard");
             let user_info = await req.json();
             setUserArray(user_info);
         } catch (error) {

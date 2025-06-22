@@ -63,7 +63,7 @@ const SignInSignUp = () => {
       const signUpPayload = { username, email, password };
 
       try {
-        const response = await fetch('http://localhost:3000/sign-up', {
+        const response = await fetch('https://securepass-api-b6ig.onrender.com/sign-up', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -90,7 +90,7 @@ const SignInSignUp = () => {
   const handleSignInSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/sign-in', {
+      const response = await fetch('https://securepass-api-b6ig.onrender.com/sign-in', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

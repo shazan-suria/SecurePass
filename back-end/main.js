@@ -5,6 +5,8 @@ import crypto from "crypto";
 import nodemailer from 'nodemailer';
 import cors from "cors";
 import { User } from "./models/User.js";
+import dotenv from 'dotenv';
+dotenv.config();
 
 const router = express.Router();
 
@@ -15,7 +17,7 @@ const port = 3000;
 
 const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb+srv://Shazan:Shazan%40231544@project-sem-5.y1lmhsg.mongodb.net/?retryWrites=true&w=majority&appName=Project-Sem-5");
+    await mongoose.connect(process.env.MONGODB_URI);
   } catch (error) {
     console.error("Error connecting to MongoDB:", error.message);
     process.exit(1);
@@ -34,8 +36,8 @@ app.use(bodyParser.json());
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'securepassss@gmail.com',
-    pass: 'cocxlnohrnutfsel',
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
 
@@ -154,7 +156,7 @@ app.post('/sign-in', async (req, res) => {
   
   if (isAdmin) {
     // Check if admin credentials are correct
-    if (email === "securepassss@gmail.com" && password === "Secure@Pass231544") {
+    if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
       return res.json({ success: true, email, password });
     } else {
       return res.status(400).json({ success: false, message: 'Invalid admin credentials' });

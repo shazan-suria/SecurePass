@@ -23,7 +23,7 @@ const DeleteAccount = () => {
 
     // Send the collection and email to the backend to delete the account
     try {
-      const response = await fetch('http://localhost:3000/delete-account', {
+      const response = await fetch('https://securepass-api-b6ig.onrender.com/delete-account', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

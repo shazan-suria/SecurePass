@@ -6,7 +6,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     // Call backend to initiate password reset
     try {
-      const response = await fetch('http://localhost:3000/forgot-password', {
+      const response = await fetch('https://securepass-api-b6ig.onrender.com/forgot-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

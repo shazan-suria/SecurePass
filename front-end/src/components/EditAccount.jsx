@@ -22,7 +22,7 @@ const EditAccount = () => {
     const payload = { email, newUsername, newPassword };
 
     try {
-      const response = await fetch('http://localhost:3000/edit-account', {
+      const response = await fetch('https://securepass-api-b6ig.onrender.com/edit-account', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ const EditAccount = () => {
 
   return (
     <div className='bg-slate-50 flex flex-col items-center h-[calc(100vh-126px)]'>
-    <div className='flex flex-col items-center bg-slate-700 mt-11 border rounded-md md:w-1/2'>
+    <div className='flex flex-col items-center bg-slate-700 mt-11 border rounded-2xl md:w-1/2'>
       <h2 className='p-4 mt-4 font-bold text-green-700 text-2xl md:text-6xl md:m-6'>Edit Account</h2>
       <form onSubmit={handleSubmit}>
       

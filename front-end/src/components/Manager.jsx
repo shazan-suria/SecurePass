@@ -37,7 +37,7 @@ const Manager = () => {
 
   const getPasswords = async (collection) => {
     try {
-      let req = await fetch(`http://localhost:3000/?collection=${collection}`);
+      let req = await fetch(`https://securepass-api-b6ig.onrender.com/?collection=${collection}`);
       let passwords = await req.json();
 
       if (passwords) {
@@ -77,7 +77,7 @@ const Manager = () => {
   const savePassword = async () => {
     if (form.site.length > 3 && form.password.length > 3 && form.username.length > 3) {
       if (form.id) {
-        await fetch(`http://localhost:3000/${form.id}?collection=${collection}`, {
+        await fetch(`https://securepass-api-b6ig.onrender.com/${form.id}?collection=${collection}`, {
           method: 'DELETE',
           headers: { 'Content-Type': 'application/json' },
         });
@@ -85,7 +85,7 @@ const Manager = () => {
       const newPassword = { ...form, id: uuidv4() }; // Generate UUID once
 
       try {
-        let res = await fetch(`http://localhost:3000/?collection=${collection}`, {
+        let res = await fetch(`https://securepass-api-b6ig.onrender.com/?collection=${collection}`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(newPassword),
@@ -148,7 +148,7 @@ const Manager = () => {
     let confirmDelete = window.confirm("Do you want to delete password?");
     if (confirmDelete) {
       try {
-        let res = await fetch(`http://localhost:3000/${id}?collection=${collection}`, {
+        let res = await fetch(`https://securepass-api-b6ig.onrender.com/${id}?collection=${collection}`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
