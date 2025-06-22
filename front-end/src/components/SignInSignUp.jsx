@@ -76,7 +76,7 @@ const SignInSignUp = () => {
           const result = await response.json();
           localStorage.setItem("UserData", JSON.stringify(result));
           // Redirect after successful sign-up
-          window.location.href = "http://localhost:5173";
+          window.location.href = "/";
         } else {
           const responseText = await response.text();
           throw new Error('Server did not return JSON');
@@ -102,11 +102,11 @@ const SignInSignUp = () => {
       if (result.success && result.email === "securepassss@gmail.com" && result.password === "Secure@Pass231544") {
         localStorage.clear();
         localStorage.setItem("admin", JSON.stringify(result));
-        window.location.href = "http://localhost:5173/dashboard";
+        window.location.href = "/dashboard";
       } else if (result.success) {
         localStorage.clear();
         localStorage.setItem("UserData", JSON.stringify(result));
-        window.location.href = "http://localhost:5173/";
+        window.location.href = "/";
       } else {
         window.alert(result.message);
       }
