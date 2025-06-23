@@ -57,7 +57,7 @@ app.post('/forgot-password', async (req, res) => {
     user.resetPasswordExpires = resetPasswordExpires;
     await user.save();
 
-    const resetUrl = `http://localhost:5173/reset-password/${resetToken}`;
+    const resetUrl = `/reset-password/${resetToken}`;
     const mailOptions = {
       from: '"SecurePass Support" <securepassss@gmail.com>', // sender address
       to: user.email, // list of receivers

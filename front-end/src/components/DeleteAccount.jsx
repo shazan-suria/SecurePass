@@ -34,7 +34,7 @@ const DeleteAccount = () => {
       if (response.ok) {
         alert('Account deleted successfully.');
         localStorage.removeItem('UserData'); // Remove user data from local storage
-        window.location.href = "http://localhost:5173/SignInSignUp";
+        window.location.href = "/SignInSignUp";
       } else {
         alert('Failed to delete account.');
       }

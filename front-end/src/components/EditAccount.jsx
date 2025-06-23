@@ -35,7 +35,7 @@ const EditAccount = () => {
         window.alert('Account updated:', data.message);
         const updatedUserData = { ...userData, password: payload.newPassword,user:payload.newUsername};
         localStorage.setItem('UserData', JSON.stringify(updatedUserData));
-        window.location.href = "http://localhost:5173/account";
+        window.location.href = "/account";
         // Optionally, update localStorage or UI to reflect changes
       } else {
         window.alert('Error:', data.message);

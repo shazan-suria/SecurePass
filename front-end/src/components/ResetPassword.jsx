@@ -27,7 +27,7 @@ const ResetPassword = () => {
       } else {  
         await axios.post(`https://securepass-api-b6ig.onrender.com/reset-password/${token}`, { newPassword });
         window.alert("Password has been reset successfully");
-        window.location.href = "http://localhost:5173/SignInSignUp";
+        window.location.href = "/SignInSignUp";
       }
     } catch (error) {
       window.alert(error.response.data);
