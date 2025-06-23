@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './style.css';
 import { Link } from 'react-router-dom';
-import dotenv from 'dotenv';
-dotenv.config();
 
 const SignInSignUp = () => {
   const [signUpData, setSignUpData] = useState({
@@ -101,7 +99,7 @@ const SignInSignUp = () => {
       });
 
       const result = await response.json();
-      if (result.success && result.email === process.env.ADMIN_EMAIL && result.password === process.env.ADMIN_PASSWORD) {
+      if (result.success && result.email === import.meta.env.VITE_ADMIN_EMAIL && password === import.meta.env.VITE_ADMIN_PASSWORD) {
         localStorage.clear();
         localStorage.setItem("admin", JSON.stringify(result));
         window.location.href = "/dashboard";

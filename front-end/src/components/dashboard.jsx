@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import dotenv from 'dotenv';
-dotenv.config();
+
 
 const Dashboard = () => {
     const [userArray, setUserArray] = useState([]);
@@ -21,7 +20,7 @@ const Dashboard = () => {
         const storedData = localStorage.getItem('admin');
         if (storedData) {
             const { email, password } = JSON.parse(storedData);
-            if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
+            if (email === import.meta.env.VITE_ADMIN_EMAIL && password === import.meta.env.VITE_ADMIN_PASSWORD) {
                 setAccessGranted(true);
                 getUsers();
             } else {
