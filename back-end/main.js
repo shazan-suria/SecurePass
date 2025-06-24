@@ -150,7 +150,7 @@ app.post('/sign-in', async (req, res) => {
   if (isAdmin) {
     if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
       console.log("Admin signed in successfully");
-      return res.json({ success: true, email, password });
+      return res.json({ success: true, email, isAdmin: true });
     } else {
       console.log("Invalid admin credentials");
       return res.status(400).json({ success: false, message: 'Invalid admin credentials' });
