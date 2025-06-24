@@ -19,8 +19,8 @@ const Dashboard = () => {
         // Check localStorage for authentication data
         const storedData = localStorage.getItem('admin');
         if (storedData) {
-            const { email, password } = JSON.parse(storedData);
-            if (email === import.meta.env.VITE_ADMIN_EMAIL && password === import.meta.env.VITE_ADMIN_PASSWORD) {
+            const { email, isAdmin } = JSON.parse(storedData);
+            if (email === import.meta.env.VITE_ADMIN_EMAIL && isAdmin) {
                 setAccessGranted(true);
                 getUsers();
             } else {
