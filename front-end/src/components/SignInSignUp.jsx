@@ -100,7 +100,7 @@ const SignInSignUp = () => {
 
       const result = await response.json();
       console.log(result); // Add this line
-      if (result.success && result.email === import.meta.env.VITE_ADMIN_EMAIL && password === import.meta.env.VITE_ADMIN_PASSWORD) {
+      if (result.success && result.email === import.meta.env.VITE_ADMIN_EMAIL && result.password === import.meta.env.VITE_ADMIN_PASSWORD) {
         localStorage.clear();
         localStorage.setItem("admin", JSON.stringify(result));
         window.location.href = "/dashboard";
