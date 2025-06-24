@@ -131,7 +131,13 @@ const SignInSignUp = () => {
               <input type="password" name="password" placeholder="Password" required onChange={handleSignInChange} />
             </div>
             <div className='input-field-check'>
-              <input type="checkbox" name="isAdmin" id="isAdmin" onChange={handleSignInChange} /> IS ADMIN
+              <input
+                type="checkbox"
+                name="isAdmin"
+                id="isAdmin"
+                checked={signInData.isAdmin}
+                onChange={handleSignInChange}
+              /> IS ADMIN
             </div>
             <Link to="/forgot-password">Forgot Password?</Link>
             <input type="submit" value="Login" className="btn solid" />
